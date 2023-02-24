@@ -29,7 +29,7 @@ if (argsLength === 3) {
         console.log(`${person.name} ${person.number}`)
       })
       mongoose.connection.close()
-  })
+    })
 }
 else if (argsLength === 5) {
   const name = process.argv[3]
@@ -40,7 +40,7 @@ else if (argsLength === 5) {
     number: number,
   })
 
-  person.save().then(result => {
+  person.save().then(() => {
     console.log(`added ${name} number ${number} to phonebook`)
     mongoose.connection.close()
   })
